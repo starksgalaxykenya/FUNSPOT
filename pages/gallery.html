@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleries - ConnectHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>ConnectHub</span>
+                </div>
+                <div class="nav-links">
+                    <a href="feed.html" class="nav-link">Feed</a>
+                    <a href="gallery.html" class="nav-link active">Galleries</a>
+                    <a href="#" id="messagesLink" class="nav-link">Messages</a>
+                    <a href="#" id="discoverLink" class="nav-link">Discover</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="upload.html" id="uploadBtn" class="btn-upload hidden">
+                        <i class="fas fa-plus"></i> Upload
+                    </a>
+                    <div class="user-menu" id="userMenu">
+                        <img id="userAvatar" class="avatar" alt="User avatar">
+                        <span id="userName"></span>
+                        <div class="dropdown-menu hidden" id="dropdownMenu">
+                            <a href="profile.html">Profile</a>
+                            <a href="dashboard.html">Creator Dashboard</a>
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Gallery Filters -->
+            <div class="gallery-header">
+                <h1>Premium Galleries</h1>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="photos">Photos</button>
+                    <button class="filter-btn" data-filter="videos">Videos</button>
+                    <button class="filter-btn" data-filter="exclusive">Exclusive</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- Gallery items will be dynamically inserted here -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i> Loading galleries...
+                </div>
+            </div>
+
+            <!-- Premium Paywall Modal -->
+            <div id="premiumModal" class="modal hidden">
+                <div class="modal-content premium-modal">
+                    <span class="close">&times;</span>
+                    <div class="premium-content">
+                        <i class="fas fa-crown premium-icon"></i>
+                        <h2>Premium Content</h2>
+                        <p>This gallery is only available to premium subscribers.</p>
+                        <p class="premium-price">Unlock all content for just <strong>$9.99/month</strong></p>
+                        <button id="subscribeBtn" class="btn-primary">Subscribe Now</button>
+                        <button id="closePremiumModal" class="btn-secondary">Maybe Later</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal for viewing media -->
+            <div id="lightboxModal" class="modal hidden">
+                <div class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <div class="lightbox-media">
+                        <img id="lightboxImage" style="display: none;">
+                        <video id="lightboxVideo" controls style="display: none;"></video>
+                    </div>
+                    <div class="lightbox-info">
+                        <h3 id="lightboxTitle"></h3>
+                        <p id="lightboxDescription"></p>
+                        <div class="lightbox-actions">
+                            <button id="likeBtn" class="action-btn">
+                                <i class="far fa-heart"></i> <span id="likeCount">0</span>
+                            </button>
+                            <button id="downloadBtn" class="action-btn">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button id="shareBtn" class="action-btn">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../js/firebase-init.js"></script>
+    <script type="module" src="../js/gallery.js"></script>
+</body>
+</html>
