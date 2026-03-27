@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ConnectHub - Premium Creator Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>ConnectHub</span>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#" class="nav-link" data-page="explore">Explore</a>
+                    <a href="#" class="nav-link" data-page="discover">Discover</a>
+                    <a href="#" class="nav-link" data-page="messages">Messages</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="authBtn" class="btn-primary">Sign In</button>
+                    <div class="user-menu hidden" id="userMenu">
+                        <img id="userAvatar" class="avatar" alt="User avatar">
+                        <span id="userName"></span>
+                        <div class="dropdown-menu hidden" id="dropdownMenu">
+                            <a href="#" data-page="profile">Profile</a>
+                            <a href="#" data-page="dashboard">Creator Dashboard</a>
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="mainContent">
+            <!-- Auth Modal -->
+            <div id="authModal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="auth-tabs">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="signup">Sign Up</button>
+                    </div>
+                    
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form active">
+                        <h3>Welcome Back</h3>
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <button type="submit" class="btn-primary">Login</button>
+                        <div class="divider">or</div>
+                        <button type="button" id="googleLogin" class="btn-google">
+                            <i class="fab fa-google"></i> Continue with Google
+                        </button>
+                    </form>
+                    
+                    <!-- Signup Form -->
+                    <form id="signupForm" class="auth-form">
+                        <h3>Create Account</h3>
+                        <input type="text" id="signupName" placeholder="Full Name" required>
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                        <select id="signupRole" required>
+                            <option value="">I am a...</option>
+                            <option value="user">Fan / Supporter</option>
+                            <option value="model">Creator / Model</option>
+                        </select>
+                        <button type="submit" class="btn-primary">Create Account</button>
+                        <div class="divider">or</div>
+                        <button type="button" id="googleSignup" class="btn-google">
+                            <i class="fab fa-google"></i> Sign up with Google
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/profile.js"></script>
+</body>
+</html>
