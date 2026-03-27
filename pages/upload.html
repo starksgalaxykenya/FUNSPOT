@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Content - ConnectHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/upload.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>ConnectHub</span>
+                </div>
+                <div class="nav-links">
+                    <a href="feed.html" class="nav-link">Feed</a>
+                    <a href="gallery.html" class="nav-link">Galleries</a>
+                    <a href="#" id="messagesLink" class="nav-link">Messages</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-menu" id="userMenu">
+                        <img id="userAvatar" class="avatar" alt="User avatar">
+                        <span id="userName"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <div class="upload-container">
+                <h1>Upload New Content</h1>
+                <p class="upload-subtitle">Share your creativity with your fans</p>
+                
+                <form id="uploadForm" class="upload-form">
+                    <!-- Media Type Selection -->
+                    <div class="form-group">
+                        <label>Content Type</label>
+                        <div class="media-type-selector">
+                            <button type="button" class="type-btn active" data-type="photo">
+                                <i class="fas fa-image"></i> Photo
+                            </button>
+                            <button type="button" class="type-btn" data-type="video">
+                                <i class="fas fa-video"></i> Video
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- File Upload Area -->
+                    <div class="form-group">
+                        <label>Upload File</label>
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop or click to upload</p>
+                            <input type="file" id="mediaFile" accept="image/*,video/*" hidden>
+                            <button type="button" id="selectFileBtn" class="btn-secondary">Select File</button>
+                        </div>
+                        <div id="filePreview" class="file-preview hidden"></div>
+                    </div>
+                    
+                    <!-- Content Details -->
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="title" placeholder="Enter a catchy title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="description" rows="4" placeholder="Describe your content..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="general">General</option>
+                            <option value="art">Art</option>
+                            <option value="music">Music</option>
+                            <option value="fitness">Fitness</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="exclusive">Exclusive</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="isPremium">
+                            <span>Mark as Premium Content (Subscribers only)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="ageRestricted">
+                            <span>Age Restricted (18+)</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div id="uploadProgress" class="upload-progress hidden">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p class="progress-text">Uploading... 0%</p>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitBtn" class="btn-primary" disabled>Upload Content</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="../js/upload.js"></script>
+</body>
+</html>
