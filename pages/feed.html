@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - ConnectHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/feed.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>ConnectHub</span>
+                </div>
+                <div class="nav-links">
+                    <a href="feed.html" class="nav-link active">Feed</a>
+                    <a href="gallery.html" class="nav-link">Galleries</a>
+                    <a href="#" id="discoverLink" class="nav-link">Discover</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="user-menu" id="userMenu">
+                        <img id="userAvatar" class="avatar" alt="User avatar">
+                        <span id="userName"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <div class="feed-container">
+                <!-- Stories Section -->
+                <div class="stories-section">
+                    <div class="stories-scroll">
+                        <div class="story-item" id="myStory">
+                            <div class="story-circle">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <span>Your Story</span>
+                        </div>
+                        <!-- Stories will be dynamically loaded -->
+                        <div id="storiesList"></div>
+                    </div>
+                </div>
+                
+                <!-- Posts Feed -->
+                <div id="feedPosts" class="feed-posts">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i> Loading feed...
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="../js/feed.js"></script>
+</body>
+</html>
